@@ -7,9 +7,9 @@ message_history = []
 
 def predict():
     global message_history
-    message_history.append({"rold":"User", "content":input})
+    message_history.append({"role":"User", "content":input})
     completion = openai.Completion.create(
-        model = "davinci",
+        model = "text_davinci_003",
         messages = message_history
     )
     reply_content = completion.choices[0].message.content
